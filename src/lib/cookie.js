@@ -4,10 +4,8 @@ module.exports = (function () {
         var domain = this.options.cookieDomain(),
             expires = (new Date((new Date()).getTime() + timeOffset)).toUTCString(),
             cookie = name + '=' + value + '; Expires=' + expires + ';';
-        
-        if (domain !== 'localhost') {
-            cookie += ' Path=/; Domain=' + domain + ';';
-        }
+
+        cookie += ' Path=/; Domain=' + domain + ';';
 
         document.cookie = cookie;
     }
